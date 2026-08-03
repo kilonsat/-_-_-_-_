@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server Ready on port ${PORT}`));
 
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+const groq = new Groq({ apiKey: process.env.API_KEY });
 
 const authenticatedUsers = new Set();
 const PASSWORD = "kill"; 
@@ -24,7 +24,7 @@ async function getAIResponse(userMessage) {
     try {
         const chatCompletion = await groq.chat.completions.create({
             messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
+                { role: 'system', content: T3LI9 },
                 { role: 'user', content: userMessage }
             ],
             model: 'llama',
